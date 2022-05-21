@@ -21,7 +21,7 @@ if(isset($_POST['submit'])){
     
      $pcode = $_POST['pcode'];
     $fullname = $_POST['fullname'];
-    $email = $_POST['email'];
+    $emails = $_POST['email'];
     $phone = $_POST['phone'];
     $date_appointment  = $_POST['date_appointment'];
     $date_created  = $_POST['date_created'];
@@ -33,7 +33,7 @@ if(isset($_POST['submit'])){
    
 
 
-    $query1 = mysqli_query($conn, "INSERT INTO appointment (pcode, fullname, email, phone, date_appointment, status, date_created) VALUES ('$pcode', '$fullname', '$email', '$phone', '$date_appointment', '$status', '$date_created')") or die(mysqli_error());
+    $query1 = mysqli_query($conn, "INSERT INTO appointment (pcode, fullname, email, phone, date_appointment, status, date_created) VALUES ('$pcode', '$fullname', '$emails', '$phone', '$date_appointment', '$status', '$date_created')") or die(mysqli_error());
     
 
     $query2 = mysqli_query($conn, "INSERT INTO tbl_events (title, start, end) VALUES ('$title', '$start', '$end')") or die(mysqli_error());

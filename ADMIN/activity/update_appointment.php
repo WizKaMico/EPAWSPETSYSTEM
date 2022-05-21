@@ -21,7 +21,7 @@ if(isset($_POST['submit'])){
     $id = $_POST['id'];
      $pcode = $_POST['pcode'];
     $fullname = $_POST['fullname'];
-    $email = $_POST['email'];
+    $emails = $_POST['email'];
     $phone = $_POST['phone'];
     $date_appointment  = $_POST['date_appointment'];
     $date_created  = $_POST['date_created'];
@@ -34,7 +34,7 @@ if(isset($_POST['submit'])){
     $status = $_POST['status'];
 
 
-    $query1 = mysqli_query($conn, "UPDATE appointment SET pcode = '$pcode', fullname = '$fullname', email = '$email', phone = '$phone', date_appointment = '$date_appointment', status = '$status' WHERE id = '$id'") or die(mysqli_error());
+    $query1 = mysqli_query($conn, "UPDATE appointment SET pcode = '$pcode', fullname = '$fullname', email = '$emails', phone = '$phone', date_appointment = '$date_appointment', status = '$status' WHERE id = '$id'") or die(mysqli_error());
     
 
     $query2 = mysqli_query($conn, "UPDATE tbl_events SET title='$title' ,start='$start',end='$end' WHERE id = '$id'") or die(mysqli_error());
