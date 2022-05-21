@@ -39,6 +39,6 @@ if(isset($_POST['submit'])){
 
     $query2 = mysqli_query($conn, "UPDATE tbl_events SET title='$title' ,start='$start',end='$end' WHERE id = '$id'") or die(mysqli_error());
 
-    header('Location:home.php?category=home');    
+    header('Location: ../home.php?category=home');    
   }   
 
