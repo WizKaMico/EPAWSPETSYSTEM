@@ -24,8 +24,8 @@
                     <div class="auth-logo">
                       
                     </div>
-                    <h1 class="auth-title">Log in.</h1>
-                    <p class="auth-subtitle mb-5">Log in with your data that you entered during registration.</p>
+                    <h1 class="auth-title">CREATE APPOINTMENT</h1>
+                  
 
                     <form action="#" method="post">
                         <div class="form-group position-relative has-icon-left mb-4">
@@ -80,17 +80,20 @@
                                 $date_appointment = $_POST['date_appointment'];
                                 $date_created = $_POST['date_created'];
                                 $status = $_POST['status'];
+
+                                $title = $_POST['pcode'];
+                                $start = $_POST['date_appointment'];
+                                $end = $_POST['date_appointment'];
                                 
                                 $query      = mysqli_query($conn, "INSERT INTO appointment (pcode, fullname, email, phone, date_appointment, date_created, status) VALUES ('$pcode', '$fullname', '$email', '$phone', '$date_appointment', '$date_created', '$status')");
+
+                                 $querys      = mysqli_query($conn, "INSERT INTO tbl_events (title, start, end) VALUES ('$title', '$start', '$end')");
                               
                             }
                       ?>
 
                     <div class="text-center mt-5 text-lg fs-4">
-                        <p class="text-gray-600">Don't have an account? <a href="auth-register.html"
-                                class="font-bold">Sign
-                                up</a>.</p>
-                        <p><a class="font-bold" href="auth-forgot-password.html">Forgot password?</a>.</p>
+                        
                     </div>
                 </div>
             </div>
