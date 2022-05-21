@@ -29,17 +29,43 @@
 
                     <form action="#" method="post">
                         <div class="form-group position-relative has-icon-left mb-4">
-                            <input type="text" class="form-control form-control-xl" name="user" placeholder="Username">
+                            <input type="text" class="form-control form-control-xl" name="pcode" value="<?php echo 'PATIENT-';echo rand('6666','9999'); ?>" readonly>
                             <div class="form-control-icon">
                                 <i class="bi bi-person"></i>
                             </div>
                         </div>
                         <div class="form-group position-relative has-icon-left mb-4">
-                            <input type="password" class="form-control form-control-xl" name="pass" placeholder="Password">
+                            <input type="text" class="form-control form-control-xl" name="fullname">
                             <div class="form-control-icon">
-                                <i class="bi bi-shield-lock"></i>
+                                <i class="bi bi-person"></i>
                             </div>
                         </div>
+
+                        <div class="form-group position-relative has-icon-left mb-4">
+                            <input type="email" class="form-control form-control-xl" name="email">
+                            <div class="form-control-icon">
+                                <i class="bi bi-person"></i>
+                            </div>
+                        </div>
+
+                        <div class="form-group position-relative has-icon-left mb-4">
+                            <input type="number" class="form-control form-control-xl" name="phone">
+                            <div class="form-control-icon">
+                                <i class="bi bi-person"></i>
+                            </div>
+                        </div>
+
+                        <div class="form-group position-relative has-icon-left mb-4">
+                            <input type="date" class="form-control form-control-xl" name="date_appointment">
+                            <?php date_default_timezone_set('Asia/Manila'); ?>
+                            <input type="date" name="date_created" value="<?php echo date('Y-m-d'); ?>">    
+                            <input type="text" name="status" value="ACTIVE">
+                            <div class="form-control-icon">
+                                <i class="bi bi-person"></i>
+                            </div>
+                        </div>
+
+
                       
                         <button class="btn btn-primary btn-block btn-lg shadow-lg mt-5" name="login">Log in</button>
                     </form>
@@ -68,8 +94,9 @@
                       ?>
 
                     <div class="text-center mt-5 text-lg fs-4">
-                        <p class="text-gray-600"><a href="register.php"
-                                class="font-bold">REGISTER FOR AN APPOINTMENT</a>.</p>
+                        <p class="text-gray-600">Don't have an account? <a href="auth-register.html"
+                                class="font-bold">Sign
+                                up</a>.</p>
                         <p><a class="font-bold" href="auth-forgot-password.html">Forgot password?</a>.</p>
                     </div>
                 </div>

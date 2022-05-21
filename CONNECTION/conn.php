@@ -4,8 +4,6 @@
 <?php
 
 
-
-
 $servername = 'mysql-78952-0.cloudclusters.net';
 $username = 'admin';
 $password = 'FVmO5y4E';
