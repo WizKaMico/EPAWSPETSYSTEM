@@ -58,8 +58,8 @@
                         <div class="form-group position-relative has-icon-left mb-4">
                             <input type="date" class="form-control form-control-xl" name="date_appointment">
                             <?php date_default_timezone_set('Asia/Manila'); ?>
-                            <input type="date" name="date_created" value="<?php echo date('Y-m-d'); ?>">    
-                            <input type="text" name="status" value="ACTIVE">
+                            <input type="hidden" name="date_created" value="<?php echo date('Y-m-d'); ?>">    
+                            <input type="hidden" name="status" value="ACTIVE">
                             <div class="form-control-icon">
                                 <i class="bi bi-person"></i>
                             </div>
@@ -67,29 +67,22 @@
 
 
                       
-                        <button class="btn btn-primary btn-block btn-lg shadow-lg mt-5" name="login">Log in</button>
+                        <button class="btn btn-primary btn-block btn-lg shadow-lg mt-5" name="submit">REGISTER</button>
                     </form>
 
                     <?php
-                        if (isset($_POST['login']))
+                        if (isset($_POST['submit']))
                             {
-                                $username = mysqli_real_escape_string($conn, $_POST['user']);
-                                $password = mysqli_real_escape_string($conn, $_POST['pass']);
+                                $pcode = $_POST['pcode'];
+                                $fullname  = $_POST['fullname'];
+                                $email = $_POST['email'];
+                                $phone = $_POST['phone']; 
+                                $date_appointment = $_POST['date_appointment'];
+                                $date_created = $_POST['date_created'];
+                                $status = $_POST['status'];
                                 
-                                $query      = mysqli_query($conn, "SELECT * FROM users WHERE  password='$password' and username='$username'");
-                                $row        = mysqli_fetch_array($query);
-                                $num_row    = mysqli_num_rows($query);
-                                
-                                if ($num_row > 0) 
-                                    {           
-                                        $_SESSION['user_id']=$row['user_id'];
-                                        header('location:home.php?category=home');
-                                        
-                                    }
-                                else
-                                    {
-                                        echo 'Invalid Username and Password Combination';
-                                    }
+                                $query      = mysqli_query($conn, "INSERT INTO appointment (pcode, fullname, email, phone, date_appointment, date_created, status) VALUES ('$pcode', '$fullname', '$email', '$phone', '$date_appointment', '$date_created', '$status')");
+                              
                             }
                       ?>
 
