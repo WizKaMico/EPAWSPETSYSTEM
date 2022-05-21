@@ -24,7 +24,7 @@
                     <div class="auth-logo">
                       
                     </div>
-                    <h1 class="auth-title">CREATE APPOINTMENT</h1>
+                    <h1 class="auth-title" style="width:20px;">CREATE APPOINTMENT</h1>
                   
 
                     <form action="#" method="post">
