@@ -1,0 +1,242 @@
+.contact {
+  background: url("../img/bg_3.jpg") center center/cover;
+  grid-column: full-start / full-end;
+  background-attachment: fixed;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  &--box {
+    grid-column: 2 / -1;
+    background: linear-gradient(
+      to right top,
+      rgba($color-blue, 0.76),
+      rgba($color-primary, 0.76)
+    );
+    padding: 5rem;
+
+    @include respond(small-tab) {
+      grid-column: 1 / -1;
+      text-align: center;
+    }
+  }
+
+  &__form {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 3rem;
+
+    @include respond(tab-port) {
+      grid-template-columns: repeat(1, 1fr);
+      grid-gap: 0;
+      grid-row-gap: 3rem;
+    }
+
+    &--service {
+      grid-column: 1 / span 2;
+    }
+
+    &--name {
+      grid-row: 3 / 4;
+
+      @include respond(tab-port) {
+        grid-column: 1 / -1;
+      }
+    }
+
+    &--mobileNo {
+      grid-column: 2 / 3;
+
+      @include respond(tab-port) {
+        grid-column: 1 / -1;
+        grid-row: 4 / 5;
+      }
+    }
+
+    &--date {
+      grid-area: 4 /1 /5 / 2;
+
+      @include respond(tab-port) {
+        grid-column: 1 / -1;
+        grid-row: 5 / 6;
+      }
+    }
+
+    &--time {
+      grid-area: 4 /2 /5 / 3;
+
+      @include respond(tab-port) {
+        grid-column: 1 / -1;
+        grid-row: 6 / 7;
+      }
+    }
+
+    &--message {
+      grid-area: 5 / 1 / 6 / span 2;
+
+      @include respond(tab-port) {
+        grid-column: 1 / -1;
+        grid-row: 7 / 8;
+      }
+    }
+
+    &--btn {
+      grid-area: 6 / 1 / 7 / span 2;
+      @include respond(tab-port) {
+        grid-column: 1 / -1;
+        grid-row: 8 / 9;
+      }
+    }
+  }
+
+  &__form--service,
+  &__form--name,
+  &__form--mobileNo,
+  &__form--date,
+  &__form--time,
+  &__form--message {
+    font-family: inherit;
+    font-size: 1.6rem;
+    padding: 1.5rem;
+    border-radius: 5px;
+    border: none;
+  }
+
+  &__form--service:focus,
+  &__form--name:focus,
+  &__form--mobileNo:focus,
+  &__form--date:focus,
+  &__form--time:focus,
+  &__form--btn:focus,
+  &__form--message:focus {
+    outline: none;
+  }
+}
+
+.contact__us {
+  padding-top: 10rem;
+  grid-column: full-start / full-end;
+  background-color: $color-light;
+
+  &--box {
+    display: grid;
+    grid-row-gap: 2rem;
+    justify-items: center;
+  }
+
+  &--icon {
+    width: 2rem;
+    height: 2rem;
+    fill: $color-white;
+  }
+
+  &--box span {
+    width: 6rem;
+    height: 6rem;
+    border-radius: 50%;
+    background-color: $color-primary;
+    display: grid;
+    place-items: center;
+  }
+
+  &--box a {
+    text-decoration: none;
+    color: $color-grey-light;
+  }
+
+  &--box strong {
+    color: $color-dark;
+  }
+}
+
+.contact__container {
+  background-color: $color-light;
+  display: grid;
+  grid-template-columns: minmax(2rem, 1fr) 3fr 2fr minmax(2rem, 1fr);
+  grid-column: full-start / full-end;
+  padding: 10rem 0;
+
+  @include respond(big-tab) {
+    grid-template-columns: minmax(2rem, 1fr) 5fr 4fr minmax(2rem, 1fr);
+  }
+
+  &--form {
+    grid-column: 2 / 3;
+    background-color: $color-white;
+    padding: 8rem 5rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 2rem;
+    border-radius: 3px;
+    @extend %shadowForBox;
+
+    @include respond(tab-port) {
+      grid-column: 2 / 4;
+    }
+  }
+
+  &--item {
+    grid-column: 3 / 4;
+
+    @include respond(tab-port) {
+      grid-column: 2 / 4;
+      max-height: 50rem;
+    }
+  }
+
+  &--img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &--field {
+    width: 100%;
+    padding-bottom: 3rem;
+    border: none;
+    font-size: 1.6rem;
+    font-family: inherit;
+    border-bottom: 1px solid rgba($color-grey-light, 0.4);
+
+    &:focus:invalid {
+      border-bottom: 1px solid rgb(248, 166, 13);
+    }
+
+    &:focus {
+      outline: none;
+      border-bottom: 1px solid $color-primary;
+    }
+  }
+
+  &--label {
+    display: inline-block;
+    font-size: 1.5em;
+    color: $color-primary;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+  }
+
+  &--name {
+    grid-area: 2 / 1 / 3 / 2;
+
+    @include respond(big-tab) {
+      grid-column: 1 / -1;
+    }
+  }
+
+  &--email {
+    grid-area: 2 / 2 / 3 / 3;
+
+    @include respond(big-tab) {
+      grid-area: 3 / 1 / 4 / -1;
+    }
+  }
+
+  &--subject {
+    grid-column: 1 / -1;
+  }
+
+  &--message {
+    grid-column: 1 / -1;
+  }
+}

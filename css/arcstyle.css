@@ -1,0 +1,52 @@
+.arcmodal .arcmodal-content {
+    box-shadow: -8px 12px 18px 0 rgba(25, 42, 70, .13);
+    border: none
+}
+
+.arcmodal .arcmodal-full {
+    max-width: 94%
+}
+
+.arcmodal .white {
+    color: #fff
+}
+
+.arcmodal .arcmodal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center
+}
+
+.arcmodal .arcmodal-header .arcmodal-title {
+    font-size: 1.1rem
+}
+
+.arcmodal .arcmodal-header .close {
+    padding: 7px 10px;
+    border-radius: 50%;
+    background: none;
+    border: none
+}
+
+.arcmodal .arcmodal-header .close:hover {
+    background: #dee2e6
+}
+
+.arcmodal .arcmodal-header i,
+.arcmodal .arcmodal-header svg {
+    font-size: 12px;
+    height: 12px;
+    width: 12px
+}
+
+.arcmodal .arcmodal-footer {
+    padding: 1rem
+}
+
+.arcmodal.arcmodal-borderless .arcmodal-header {
+    border-bottom: 0
+}
+
+.arcmodal.arcmodal-borderless .arcmodal-footer {
+    border-top: 0
+}

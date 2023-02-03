@@ -1,0 +1,114 @@
+.features {
+  background-color: $color-light;
+  grid-column: full-start / full-end;
+  padding: 0 3rem 10rem 3rem;
+  @include gridCentering;
+  grid-column-gap: 5rem;
+  grid-row-gap: 15rem;
+
+  @include respond(phone) {
+    padding: 0 3rem 7rem;
+  }
+}
+
+.feature {
+  background-color: $color-white;
+  padding: 7rem 3rem 5rem;
+  margin-top: -5rem;
+  border-radius: 5px;
+  text-align: center;
+  box-shadow: 0 1rem 3rem rgba($color-dark, 0.2);
+  transition: all 0.2s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+
+  @include respond(phone) {
+    padding: 3rem;
+  }
+
+  &:hover {
+    background-color: $color-primary;
+    color: $color-white;
+  }
+
+  &:hover &--text {
+    color: $color-white;
+  }
+
+  &:nth-of-type(3) {
+    @include respond(big-tab) {
+      transform: translateX(50%);
+    }
+
+    @include respond(big-phone) {
+      transform: translateX(0);
+    }
+  }
+
+  &__large-circle {
+    width: 10rem;
+    height: 10rem;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $color-light;
+    position: absolute;
+    top: -5rem;
+
+    @include respond(big-phone) {
+      width: 7rem;
+      height: 7rem;
+    }
+  }
+
+  &--icon {
+    width: 4rem;
+    height: 4rem;
+    fill: $color-primary;
+
+    @include respond(big-phone) {
+      width: 3rem;
+      height: 3rem;
+    }
+  }
+
+  &--icon-small {
+    width: 2rem;
+    height: 2rem;
+    fill: $color-white;
+  }
+
+  &--text {
+    transition: all 0.2s;
+  }
+
+  &__small-circle {
+    background-color: $color-primary;
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    bottom: -2.5rem;
+    transition: all 0.2s;
+  }
+
+  &:hover &__small-circle {
+    transform: translateX(1.6rem);
+  }
+}
+
+.feature-active {
+  background-color: $color-primary;
+  color: $color-white;
+}
+.feature-active-circle {
+  background-color: $color-white;
+  color: $color-primary;
+  fill: currentColor;
+}

@@ -1,0 +1,125 @@
+.staff {
+  background-color: $color-primary;
+  grid-column: full-start / full-end;
+  padding: 5rem 0;
+
+  &--box {
+    max-width: 114rem;
+    width: 100%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-items: center;
+
+    @include respond(phone) {
+      grid-row-gap: 2rem;
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  &__text--box {
+    color: $color-white;
+    line-height: 1.3;
+
+    span {
+      font-size: 5rem;
+      font-weight: 600;
+    }
+
+    p {
+      font-size: 1.8rem;
+    }
+  }
+}
+
+.veterinarian {
+  padding: 10rem 0;
+  grid-column: center-start / center-end;
+
+  &__box {
+    @extend %shadowForBox;
+    text-align: center;
+    display: grid;
+  }
+
+  &__item {
+    position: relative;
+    overflow: hidden;
+  }
+
+  &__img {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.2s;
+  }
+
+  &__icon-box {
+    position: absolute;
+    bottom: -5rem;
+    opacity: 1;
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    width: 60%;
+    margin-left: 20%;
+    transition: all 0.3s;
+
+    span {
+      width: 5rem;
+      height: 5rem;
+      border-radius: 50%;
+      background: linear-gradient(45deg, $color-blue, $color-primary);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  &--icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    fill: $color-white;
+  }
+
+  &__description {
+    padding: 2rem;
+    transition: all 0.2s;
+
+    p,
+    h4,
+    h5 {
+      transition: all 0.2s;
+    }
+  }
+
+  &__box:hover &__img {
+    transform: scale(1.05);
+  }
+
+  &__box:hover &__description {
+    background-color: $color-primary;
+    color: $color-white;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+  }
+
+  &__box:hover &__description > p {
+    color: $color-white;
+  }
+
+  &__box:hover &__description > h5 {
+    color: $color-dark;
+  }
+
+  &__box:hover &__description > h4 {
+    color: $color-white;
+  }
+
+  &__box:hover &__icon-box {
+    bottom: 2rem;
+    opacity: 1;
+  }
+}

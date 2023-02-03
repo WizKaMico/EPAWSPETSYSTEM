@@ -1,0 +1,75 @@
+.testimonial {
+  grid-column: full-start / full-end;
+  background: linear-gradient(rgba($color-white, 0.1), rgba($color-white, 0.1)),
+    url("../img/bg_2.jpg") center center/cover;
+  background-attachment: fixed;
+  padding: 10rem 3rem;
+  display: grid;
+  grid-row-gap: 5rem;
+
+  @include respond(big-phone) {
+    padding: 5rem 3rem;
+  }
+
+  &--box {
+    position: relative;
+    padding: 3rem;
+    @extend %shadowForBox;
+
+    &:nth-of-type(3) {
+      @include respond(tab-port) {
+        transform: translateX(50%);
+      }
+
+      @include respond(big-phone) {
+        transform: translateX(0);
+      }
+    }
+  }
+
+  &__icon-box {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    background-color: $color-primary;
+    display: grid;
+    place-items: center;
+    position: absolute;
+    left: 2rem;
+    top: -2rem;
+  }
+
+  &--icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    fill: $color-white;
+  }
+
+  &--text {
+    font-size: 1.6rem;
+    color: $color-grey-light;
+  }
+
+  &__customer {
+    display: grid;
+    grid-template-columns: 7rem 1fr;
+    grid-column-gap: 1.5rem;
+
+    &--img {
+      width: 100%;
+      border-radius: 50%;
+      transform: translateY(3rem);
+    }
+
+    &--name {
+      grid-column: 2 / 3;
+      font-size: 2.2rem;
+      align-self: end;
+    }
+
+    &--designation {
+      grid-column: 2 / 3;
+      font-size: 1.6rem;
+    }
+  }
+}

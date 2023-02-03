@@ -1,0 +1,14 @@
+.header {
+  background-color: #c8c8c7;
+  background: linear-gradient(rgba($color-dark, 0.2), rgba($color-dark, 0.2)),
+    url("../img/bg.jpg") center center/cover;
+  background-attachment: fixed;
+  grid-column: full-start / full-end;
+  text-align: center;
+  display: grid;
+  place-content: center;
+
+  @include respond(tab-port) {
+    background-attachment: scroll;
+  }
+}

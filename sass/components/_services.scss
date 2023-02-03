@@ -1,0 +1,75 @@
+.services {
+  &__picture {
+    grid-column: center-start / col-end 3;
+    display: grid;
+    place-items: center;
+
+    &--img {
+      width: 100%;
+    }
+
+    @include respond(medium-tab) {
+      grid-column: center-start / center-end;
+    }
+  }
+  &__content {
+    grid-column: col-start 4 / center-end;
+    padding: 10rem 0 10rem 5rem;
+    display: grid;
+    grid-template-rows: min-content 1fr;
+
+    @include respond(medium-tab) {
+      grid-column: center-start / center-end;
+      padding: 10rem 0;
+    }
+
+    @include respond(medium-tab) {
+      padding: 5rem 0;
+    }
+
+    &--container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+      grid-gap: 4rem;
+
+      @include respond(medium-tab) {
+        grid-template-columns: repeat(auto-fit, minmax(25rem, 35rem));
+        justify-content: center;
+      }
+
+      div {
+        display: grid;
+        grid-template-columns: min-content 1fr;
+        grid-column-gap: 2.2rem;
+      }
+
+      span {
+        display: inline-block;
+        width: 7rem;
+        height: 7rem;
+        border-radius: 50%;
+        background-color: $color-primary;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        grid-row: 1 / span 2;
+
+        @include respond(big-phone) {
+          width: 5.5rem;
+          height: 5.5rem;
+        }
+      }
+    }
+
+    &--icon {
+      width: 3.5rem;
+      height: 3.5rem;
+      fill: $color-white;
+
+      @include respond(big-phone) {
+        width: 3rem;
+        height: 3rem;
+      }
+    }
+  }
+}

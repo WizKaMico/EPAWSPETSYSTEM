@@ -1,0 +1,115 @@
+@mixin centering {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin gridCentering {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, (minmax(25rem, 35rem)));
+  justify-content: center;
+  justify-items: center;
+}
+
+@mixin hoverColor {
+  transition: color 0.2s;
+  &:hover {
+    color: $color-primary;
+  }
+}
+
+%shadowForBox {
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: 0 1.5rem 3rem rgba(#000, 0.15);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+%shadowOnHover {
+  transform: translateY(-5px) scale(1.01);
+  box-shadow: 0 3rem 6rem rgba(#000, 0.2);
+}
+
+//* ======== MEDIA QUERY MANAGER
+
+//* 0- 600PX:      PHONE
+//* 600-900PX:     TABLET-PORTRAIT
+//* 900-1200PX:    TABLET- LANDSCAPE
+//* [1200-1800PX]  IS WHERE OUR NORMAL STYLE APPLIES
+//* 1800PX + :     BIG DESKTOP
+
+//*  @mixin respond-phone {
+//*    @media (max-width: 600px) {
+//*      @content;
+//*    }
+//*  }
+
+//* ===== BREAKPOINT ARGUMENTS:
+//* phone
+//* tab-port
+//* tab-land
+//* big-desktop
+
+//* ========= 1em = 16px  width in em = width in px /  16px
+
+@mixin respond($breakpoint) {
+  @if $breakpoint == small-phone {
+    @media only screen and (max-width: 32em) {
+      @content;
+    }
+  }
+  @if $breakpoint == phone {
+    @media only screen and (max-width: 39.44em) {
+      @content;
+    }
+  }
+  @if $breakpoint == big-phone {
+    @media only screen and (max-width: 40.44em) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == small-tab {
+    @media only screen and (max-width: 47em) {
+      @content;
+    }
+  }
+  @if $breakpoint == medium-tab {
+    @media only screen and (max-width: 53.25em) {
+      @content;
+    }
+  }
+  @if $breakpoint == tab-port {
+    @media only screen and (max-width: 58.44em) {
+      @content;
+    }
+  }
+  @if $breakpoint == big-tab {
+    @media only screen and (max-width: 60.44em) {
+      @content;
+    }
+  }
+  @if $breakpoint == tab-land {
+    @media only screen and (max-width: 75em) {
+      @content;
+    }
+  }
+  @if $breakpoint == big-desktop {
+    @media only screen and (min-width: 112.5em) {
+      @content;
+    }
+  }
+}
+
+%sameMediaQuery {
+  &:nth-of-type(3) {
+    @include respond(tab-port) {
+      transform: translateX(50%);
+    }
+
+    @include respond(phone) {
+      transform: translateX(0);
+    }
+  }
+}

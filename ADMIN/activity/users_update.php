@@ -9,8 +9,11 @@
 		$password = $_POST['password'];
 		$name = $_POST['name'];
 		$designation = $_POST['designation'];
+		$email = $_POST['email'];
+		$phone = $_POST['phone_number'];
+
 		
-		$sql = "UPDATE users SET username='$username', password='$password', name='$name', designation='$designation' WHERE user_id = '$id'";
+		$sql = "UPDATE users SET username='$username', password='$password', name='$name', email='$email', phone='$phone', designation='$designation'  WHERE user_id = '$id'";
 
 		//use for MySQLi OOP
 		if($conn->query($sql)){

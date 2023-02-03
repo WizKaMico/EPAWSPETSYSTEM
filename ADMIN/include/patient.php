@@ -5,14 +5,18 @@
                         <div class="col-md-12 col-12">
                             <div class="card">
                                 <div class="card-header">
-                                    <h4 class="card-title">PATIENT RECORD</h4>
+                                    <h4 class="card-title">PET RECORD</h4>
+                                        <button type="button" class="btn btn-outline-primary block" data-bs-toggle="modal"
+                                        > <a href="home.php?category=archive">
+                                                VIEW ARCHIVED PET RECORDS
+                                        </a></button>
                                 </div>
                                 <div class="card-content">
                                     <div class="card-body">
                                         <table class="table table-striped" id="table1">
                                         <thead>
-                                            <tr>
-                                                <th>NAME</th>
+                                                <th>PET NAME</th>
+                                                <th>PET</th>
                                                 <th>EMAIL</th>
                                                 <th>PHONE</th>
                                                 <th>TOTAL APPOINTMENTS</th>
@@ -26,15 +30,18 @@
                                                     date_default_timezone_set('Asia/Manila'); 
                                                     $query = mysqli_query($conn, "SELECT *,count(id) as total FROM appointment GROUP BY fullname") or die(mysqli_error());
                                                     while($fetch = mysqli_fetch_array($query)){
+                                                        if($fetch['arc'] != 1){
+
                                             ?>
                                             <tr>
                                                 <td><?php echo $fetch['fullname']; ?></td>
+                                                  <td><?php echo $fetch['pet']; ?></td>
                                                 <td><?php echo $fetch['email']; ?></td>
                                                  <td><?php echo $fetch['phone']; ?></td>
                                                  <td><?php echo $fetch['total']; ?></td>
                                                 <td>
                                                  
-                                                    <a href="include/patient_record.php?name=<?php echo $fetch['fullname']; ?>&category=patient" class="btn btn-outline-primary block">VIEW RECORD</a>
+                                                    <a href="home.php?name=<?php echo $fetch['fullname']; ?>&category=records" class="btn btn-outline-primary block">VIEW RECORD</a>
 
                                                      
 
@@ -44,6 +51,8 @@
                                               
                                                 
                                             </tr>
+                                                    
+                                                <?php } ?>
                                             <?php } ?>
                                             
                                         </tbody>

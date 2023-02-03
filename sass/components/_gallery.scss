@@ -1,0 +1,143 @@
+.gallery {
+  position: relative;
+  background-color: #ffffff;
+  grid-column: center-start / center-end;
+  padding: 10rem 0;
+
+  @include respond(big-phone) {
+    padding: 5rem 0;
+  }
+
+  &__item {
+    position: relative;
+
+    span {
+      background-color: $color-primary;
+      display: inline-block;
+      width: 7rem;
+      height: 7rem;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      @include centering;
+      opacity: 0;
+      transition: all 0.3s;
+
+      @include respond(big-phone) {
+        width: 4.5rem;
+        height: 4.5rem;
+      }
+    }
+    a {
+      cursor: zoom-in;
+    }
+  }
+
+  &--overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba($color-dark, 0.4), rgba($color-dark, 0.4));
+    transition: all 0.3s;
+    opacity: 0;
+  }
+
+  &__img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &--icon {
+    fill: $color-white;
+    width: 2.5rem;
+    height: 2.5rem;
+
+    @include respond(big-phone) {
+      width: 2rem;
+      height: 2rem;
+    }
+  }
+
+  &__img--description {
+    position: absolute;
+    left: 3rem;
+    bottom: 1.5rem;
+    opacity: 0;
+    transition: all 0.3s;
+
+    p:nth-child(1) {
+      color: $color-grey-light;
+      font-size: 1.6rem;
+    }
+
+    p:nth-child(2) {
+      color: $color-white;
+      font-size: 2rem;
+      font-weight: 600;
+      text-transform: uppercase;
+
+      @include respond(phone) {
+        font-size: 1.7rem;
+      }
+    }
+  }
+
+  &__item:hover span,
+  &__item:hover &--overlay,
+  &__item:hover &__img--description {
+    opacity: 1;
+  }
+
+  &--close-btn {
+    background: none;
+    border: none;
+    font-size: 4rem;
+    cursor: pointer;
+    position: absolute;
+    top: 5rem;
+    right: 3rem;
+    color: #fff;
+    z-index: 110;
+
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+// * FOR MAKING IMAGE POP IN CLICK
+
+.pop-image {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 100;
+  width: 100%;
+}
+
+.hidden {
+  display: none;
+}
+
+#overlay {
+  position: fixed;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba($color-dark, 0.5);
+  z-index: 90;
+  pointer-events: none;
+  transition: all 0.5s;
+}
+
+#overlay.active {
+  pointer-events: all;
+  opacity: 1;
+}

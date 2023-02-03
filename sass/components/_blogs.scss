@@ -1,0 +1,60 @@
+.blog {
+  background-color: #f8f9fd;
+  grid-column: full-start / full-end;
+  padding: 10rem 3rem;
+
+  @include respond(big-phone) {
+    padding: 5rem 3rem;
+  }
+
+  &--box {
+    @extend %shadowForBox;
+    @extend %sameMediaQuery;
+
+    &:hover {
+      @extend %shadowOnHover;
+    }
+  }
+
+  &__img {
+    width: 100%;
+    border-radius: 5px;
+  }
+
+  &__text--box {
+    padding: 3rem;
+  }
+
+  &__link {
+    text-transform: uppercase;
+    font-size: 1.3rem;
+    color: $color-grey-light;
+    text-decoration: none;
+    @include hoverColor;
+
+    &:not(:last-child) {
+      margin-right: 1rem;
+    }
+  }
+
+  &--icon {
+    width: 1.2rem;
+    height: 1.2rem;
+    fill: $color-primary;
+
+    &:hover {
+      fill: $color-dark;
+    }
+  }
+
+  &__description {
+    font-weight: 400;
+    font-size: 1.8rem;
+
+    a {
+      text-decoration: none;
+      color: $color-dark;
+      @include hoverColor;
+    }
+  }
+}

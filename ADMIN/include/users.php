@@ -32,15 +32,33 @@
                                                         <input type="text" id="contact-info" class="form-control"
                                                             name="name" placeholder="Enter Fullname">
                                                     </div>
+                                                    <div class="col-md-4">
+                                                        <label>EMAIL</label>
+                                                    </div>
+                                                    <div class="col-md-8 form-group">
+                                                        <input type="email" id="email-lang" class="form-control"
+                                                            name="email" placeholder="Enter Email">
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <label>PHONE NUMBER</label>
+                                                    </div>
+                                                    <div class="col-md-8 form-group">
+                                                        <input type="number" id="phone-no" class="form-control"
+                                                            name="phone" placeholder="Enter Phone No.">
+                                                    </div>
 
 
                                                     <div class="col-md-4">
                                                         <label>DESIGNATION</label>
                                                     </div>
                                                     <div class="col-md-8 form-group">
-                                                         <select class="form-control" name="designation">
-                                                             <option value="DOCTOR">DOCTOR</option>
-                                                             <option value="STAFF">STAFF</option>
+                                                           <select class="form-control" name="designation">
+                                                            
+                                                             <option value="VET">VET</option>
+                                                             <option value="USER">USER</option>
+                                                             <option value="CLERK">CLERK</option>
+                                                             <option value="BANNED">BANNED</option>
+                                                         
                                                          </select>
                                                     </div>
                                                     
@@ -172,15 +190,32 @@
                                                         <input type="text" id="contact-info" class="form-control"
                                                             name="name" value="<?php echo $fetch['name']; ?>">
                                                     </div>
+                                                    <div class="col-md-4">
+                                                        <label>EMAIL</label>
+                                                    </div>
+                                                    <div class="col-md-12 form-group">
+                                                        <input type="text" id="email-lang" class="form-control"
+                                                            name="email" value="<?php echo $fetch['email']; ?>">
+                                                    </div><div class="col-md-4">
+                                                        <label>PHONE NUMBER</label>
+                                                    </div>
+                                                    <div class="col-md-12 form-group">
+                                                        <input type="text" id="phone-no" class="form-control"
+                                                            name="phone_number" value="<?php echo $fetch['phone']; ?>">
+                                                    </div>
 
 
                                                     <div class="col-md-4">
                                                         <label>DESIGNATION</label>
                                                     </div>
                                                     <div class="col-md-12 form-group">
-                                                         <select class="form-control" name="designation">
-                                                             <option value="DOCTOR">DOCTOR</option>
-                                                             <option value="STAFF">STAFF</option>
+                                                           <select class="form-control" name="designation" >
+                                                            
+                                                             <option value="VET">VET</option>
+                                                             <option value="USER">USER</option>
+                                                              <option value="CLERK">CLERK</option>
+                                                             <option value="BANNED">BANNED</option>
+                                                         
                                                          </select>
                                                     </div>
 

@@ -4,14 +4,13 @@
 <?php
 
 
-$servername = 'mysql-78952-0.cloudclusters.net';
-$username = 'admin';
-$password = 'FVmO5y4E';
-$dbname   = 'ocas';
-$dbServerPort = '16898';
+$servername = 'localhost';
+$username = 'root';
+$password = '';
+$dbname   = 'epaws';
 
 // Create connection
-$conn = new mysqli($servername, $username, $password, $dbname, $dbServerPort,);
+$conn = new mysqli($servername, $username, $password, $dbname);
 
 // Check connection
 if ($conn->connect_error) {

@@ -1,0 +1,169 @@
+// * NAVIGATION FOR THE LARGE SCREEN
+
+.nav {
+  grid-column: full-start / full-end;
+  background-color: $color-white;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  align-items: center;
+  justify-items: center;
+  grid-column-gap: 5rem;
+  padding: 0 2rem;
+
+  //* for making fixed navbar but you need javascript for this, to place it top 0 as soon as we scroll.
+  // position: fixed;
+  // width: 100%;
+  // top: 4.7rem;
+  // left: 0;
+  // z-index: 2500;
+
+  @include respond(tab-port) {
+    grid-template-columns: max-content 1fr;
+    padding: 1.5rem 4rem;
+  }
+
+  &__left {
+    justify-self: end;
+
+    &--link {
+      font-size: 2.8rem;
+      text-decoration: none;
+    }
+
+    &--icon {
+      width: 2.8rem;
+      height: 2.8rem;
+      fill: $color-primary;
+      margin-right: 0.6rem;
+    }
+
+    span {
+      font-weight: 800;
+      color: $color-dark;
+    }
+  }
+
+  &__right {
+    &--list {
+      display: flex;
+    }
+
+    &--link {
+      display: inline-block;
+      text-decoration: none;
+      padding: 3.6rem 1.8rem;
+      color: $color-dark;
+      text-transform: uppercase;
+      font-size: 1.5rem;
+      font-weight: 600;
+      transition: all 0.2s;
+      position: relative;
+
+      @include respond(tab-port) {
+        padding: 1.5rem 0;
+      }
+
+      &::after {
+        content: "";
+        display: inline-block;
+        height: 2px;
+        width: 0;
+        background-color: $color-primary;
+        position: absolute;
+        bottom: -2px;
+        left: 50%;
+        transition: all 0.2s;
+      }
+
+      &:hover {
+        color: $color-primary;
+      }
+
+      &:hover::after {
+        left: 0;
+        background-color: $color-primary;
+        width: 100%;
+      }
+    }
+    @include respond(tab-port) {
+      display: none;
+    }
+  }
+
+  // * NAVIGATION FOR THE MOBILES
+
+  &__checkbox {
+    display: none;
+  }
+
+  &__button {
+    font-size: 1.8rem;
+    text-align: center;
+    align-items: center;
+    display: none;
+
+    @include respond(tab-port) {
+      display: flex;
+      justify-self: end;
+    }
+  }
+
+  &__icon {
+    margin-right: 1.5rem;
+    position: relative;
+
+    &,
+    &::before,
+    &::after {
+      width: 3rem;
+      height: 2px;
+      background-color: $color-dark;
+      display: inline-block;
+      transition: all 0.2s;
+    }
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+    }
+
+    &::before {
+      top: -0.8rem;
+    }
+
+    &::after {
+      top: 0.8rem;
+    }
+  }
+
+  &__checkbox:checked ~ &__right {
+    display: flex;
+  }
+
+  &__checkbox:checked ~ &__right > &__right--list {
+    flex-direction: column;
+    justify-content: center;
+    max-height: 100vh;
+  }
+
+  &__checkbox:checked + &__button &__icon {
+    background-color: transparent;
+  }
+
+  &__checkbox:checked + &__button &__icon::before {
+    top: 0;
+    transform: rotate(-135deg);
+  }
+
+  &__checkbox:checked + &__button &__icon::after {
+    top: 0;
+    transform: rotate(135deg);
+  }
+}
+
+.nav-active {
+  color: $color-primary;
+  border-bottom: 2px solid $color-primary;
+}

@@ -8,9 +8,11 @@
 		$username = $_POST['username'];
 		$password = $_POST['password'];
 		$name = $_POST['name'];
+		$email = $_POST['email'];
+		$phone = $_POST['phone'];
 		$designation = $_POST['designation'];
 		
-		$sql = "INSERT INTO users (username, password, name, designation) VALUES ('$username', '$password', '$name', '$designation')";
+		$sql = "INSERT INTO users (username, password, name, email, phone, designation) VALUES ('$username', '$password', '$name','$email', '$phone' '$designation')";
 
 		//use for MySQLi OOP
 		if($conn->query($sql)){

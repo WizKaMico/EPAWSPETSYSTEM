@@ -1,0 +1,36 @@
+.mt-sm {
+  margin-top: 2rem;
+}
+.mt-md {
+  margin-top: 3rem;
+}
+.mt-lg {
+  margin-top: 4rem;
+}
+.mt-hg {
+  margin-top: 8rem;
+}
+.mb-sm {
+  margin-bottom: 2rem;
+}
+.mb-md {
+  margin-bottom: 3rem;
+}
+.mb-lg {
+  margin-bottom: 4rem;
+}
+.mb-hg {
+  margin-bottom: 8rem;
+}
+
+#transform {
+  transform: translateX(0);
+}
+
+#transform--hover {
+  transform: translateX(0);
+
+  &:hover {
+    @extend %shadowOnHover;
+  }
+}

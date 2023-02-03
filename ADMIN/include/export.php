@@ -17,7 +17,7 @@
     	fputcsv($f, $headers, $delimiter);
  
     	while($row = $query->fetch_array()){
-	        $lines = array($row['pcode'], $row['fullname'], $row['email'], $row['phone'], $row['date']);
+	        $lines = array($row['pcode'], $row['fullname'], $row['email'], $row['phone'], $row['date_created']);
 	        fputcsv($f, $lines, $delimiter);
 	    }
  

@@ -1,0 +1,31 @@
+{
+  "name": "petsitting",
+  "version": "1.0.0",
+  "description": "Petsitting is a website made as a practice project. This website is originally made with bootstrap but I made it with custom CSS as a practice to brush up my CSS skills. I made couple of changes to it as well. I used SASS for writing CSS.",
+  "main": "index.js",
+  "scripts": {
+    "watch:sass": "node-sass sass/main.scss css/style.css -w",
+    "compile:sass": "node-sass sass/main.scss css/style.comp.css",
+    "prefix:css": "postcss --use autoprefixer -b 'last versions' css/style.comp.css -o css/style.prefix.css",
+    "compress:css": "node-sass css/style.prefix.css css/style.css --output-style compressed",
+    "build:css": "npm-run-all compile:sass prefix:css compress:css"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^10.1.0",
+    "node-sass": "^4.14.1",
+    "npm-run-all": "^4.1.5",
+    "postcss-cli": "^8.3.0",
+    "postcss-scss": "^3.0.4"
+  },
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PawanJS/petsitting.git"
+  },
+  "bugs": {
+    "url": "https://github.com/PawanJS/petsitting/issues"
+  },
+  "homepage": "https://github.com/PawanJS/petsitting#readme"
+}

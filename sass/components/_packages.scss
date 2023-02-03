@@ -1,0 +1,83 @@
+.package {
+  background-color: #f8f9fd;
+  grid-column: full-start / full-end;
+  padding: 10rem 3rem;
+
+  @include respond(big-phone) {
+    padding: 5rem 3rem;
+  }
+
+  &--box {
+    @extend %shadowForBox;
+    @extend %sameMediaQuery;
+
+    &:hover {
+      @extend %shadowOnHover;
+    }
+  }
+
+  &__img {
+    width: 100%;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+  }
+
+  &__details {
+    padding: 3rem;
+    text-align: center;
+  }
+
+  &--name {
+    display: block;
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: $color-primary;
+    text-transform: uppercase;
+  }
+
+  &--price {
+    font-size: 6rem;
+    font-weight: 600;
+    color: $color-dark;
+
+    sub,
+    sup {
+      font-weight: 400;
+      color: $color-grey-light;
+    }
+
+    sup {
+      font-size: 2.4rem;
+      margin-top: 0.5rem;
+      margin-right: -1rem;
+    }
+
+    sub {
+      font-size: 1.4rem;
+      margin-top: -1rem;
+      margin-left: -1.5rem;
+    }
+  }
+
+  &__list {
+    font-size: 1.6rem;
+
+    &--item {
+      padding: 1rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      &:nth-of-type(odd) {
+        background-color: rgba($color-dark, 0.05);
+      }
+    }
+  }
+
+  &--icon {
+    width: 1.3rem;
+    height: 1.3rem;
+    fill: $color-blue;
+    margin-right: 0.8rem;
+  }
+}

@@ -7,7 +7,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OCAS | ONLINE CLINIC APPOINTMENT SYSTEM</title>
+    <title>EPAWS | ONLINE APPOINTMENT SYSTEM</title>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/bootstrap.css">
     <link rel="stylesheet" href="assets/vendors/bootstrap-icons/bootstrap-icons.css">
@@ -41,7 +41,7 @@
                             </div>
                         </div>
                       
-                        <button class="btn btn-primary btn-block btn-lg shadow-lg mt-5" name="login">Log in</button>
+                        <button class="btn btn-primary btn-block btn-lg shadow-lg mt-5" name="login" style="background-color:green;">Log in</button>
                     </form>
 
                     <?php
@@ -50,7 +50,7 @@
                                 $username = mysqli_real_escape_string($conn, $_POST['user']);
                                 $password = mysqli_real_escape_string($conn, $_POST['pass']);
                                 
-                                $query      = mysqli_query($conn, "SELECT * FROM users WHERE  password='$password' and username='$username'");
+                                $query      = mysqli_query($conn, "SELECT * FROM users WHERE  password='$password' and username='$username' AND designation = 'VET' OR designation = 'STAFF'");
                                 $row        = mysqli_fetch_array($query);
                                 $num_row    = mysqli_num_rows($query);
                                 
@@ -67,15 +67,11 @@
                             }
                       ?>
 
-                    <div class="text-center mt-5 text-lg fs-4">
-                        <p class="text-gray-600"><a href="register.php"
-                                class="font-bold">REGISTER FOR AN APPOINTMENT</a>.</p>
-                        <p><a class="font-bold" href="auth-forgot-password.html">Forgot password?</a>.</p>
-                    </div>
+                   
                 </div>
             </div>
             <div class="col-lg-7 d-none d-lg-block">
-                <div id="auth-right">
+                <div id="auth-right" style="background-image:url('loginbg/dog.png');">
 
                 </div>
             </div>

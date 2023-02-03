@@ -1,0 +1,65 @@
+body {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+.heading-1 {
+  font-size: calc(2rem + 2.7vw);
+  font-weight: 800;
+  color: $color-white;
+  line-height: 1.2;
+
+  &--main {
+    animation: moveInRight 1s ease-out;
+    display: block;
+  }
+
+  &--sub {
+    animation: moveInLeft 1s ease-out;
+    display: block;
+  }
+}
+
+.heading-2 {
+  font-size: calc(2rem + 1.5vw);
+  font-weight: 600;
+
+  @include respond(medium-tab) {
+    text-align: center;
+  }
+
+  &--light {
+    color: $color-white;
+  }
+}
+
+.heading-3 {
+  font-size: calc(1.6rem + 1.1vh);
+  font-weight: 600;
+
+  &--light {
+    color: $color-white;
+  }
+  &--thin {
+    font-weight: 400;
+  }
+}
+.heading-4 {
+  font-size: calc(1.4rem + 0.9vh);
+  font-weight: 600;
+}
+
+.heading-5 {
+  font-size: calc(1.4rem + 0.5vh);
+  color: $color-primary;
+}
+
+.paragraph {
+  font-size: calc(1.4rem + 0.5vh);
+  color: $color-grey-light;
+
+  @include respond(small-phone) {
+    font-size: 1.6rem;
+  }
+}

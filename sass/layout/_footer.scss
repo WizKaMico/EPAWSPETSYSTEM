@@ -1,0 +1,122 @@
+.footer {
+  background-color: #1a1a1a;
+  grid-column: full-start / full-end;
+  padding: 10rem 5rem;
+  display: grid;
+  grid-row-gap: 5rem;
+
+  @include respond(big-phone) {
+    padding: 5rem 3rem;
+  }
+
+  &__box {
+    padding: 2rem;
+  }
+
+  &--text {
+    color: $color-grey-light;
+    font-size: 1.6rem;
+  }
+
+  &__social--box {
+  }
+
+  &__social--link {
+    text-decoration: none;
+
+    span {
+      display: inline-block;
+      width: 4rem;
+      height: 4rem;
+      border-radius: 50%;
+      background-color: $color-dark-light;
+      position: relative;
+      margin-right: 1rem;
+    }
+  }
+
+  &--icon {
+    width: 2rem;
+    height: 2rem;
+    fill: $color-primary;
+    transition: fill 0.2s;
+    @include centering;
+  }
+
+  &__blog {
+    display: grid;
+    grid-template-columns: 8rem 1fr;
+    grid-column-gap: 2rem;
+    grid-row-gap: 1rem;
+    &--img {
+      width: 100%;
+      border-radius: 5px;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    &--link {
+      font-size: 1.6rem;
+      text-decoration: none;
+      color: $color-white;
+      @include hoverColor;
+    }
+
+    &--link-box {
+      grid-column: 2 / 3;
+    }
+  }
+
+  &__list {
+    font-size: 1.6rem;
+
+    &--item {
+      padding: 1rem 0;
+    }
+
+    &--link {
+      text-decoration: none;
+      color: $color-grey-light;
+      @include hoverColor;
+    }
+  }
+
+  &__contact {
+    &:not(:last-of-type) {
+      margin-bottom: 1.5rem;
+    }
+
+    &--link {
+      font-size: 1.7rem;
+      text-decoration: none;
+      color: $color-grey-light;
+      @include hoverColor;
+      display: grid;
+      grid-template-columns: min-content 1fr;
+      align-items: center;
+      grid-column-gap: 0.2rem;
+    }
+
+    &--icon {
+      width: 1.5rem;
+      height: 1.5rem;
+      fill: currentColor;
+      margin-right: 1rem;
+    }
+  }
+
+  &__copyright--text {
+    color: $color-grey-light;
+    font-size: 1.6rem;
+    text-align: center;
+
+    a {
+      text-decoration: none;
+      color: $color-primary;
+    }
+  }
+
+  &__social--link > span:hover &--icon {
+    fill: $color-white;
+  }
+}
